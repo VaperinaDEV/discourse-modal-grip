@@ -26,10 +26,9 @@
       }
     }
     &__header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      .d-modal__title {
+        text-align: center;
+      }
       .modal-close {
         display: none;
       }
