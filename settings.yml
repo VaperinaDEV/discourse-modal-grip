@@ -1,0 +1,22 @@
+modal_border_radius: 
+  default: "1em 1em 0 0"
+  description: "top-left top-right bottom-right bottom-left"
+modal_grip_vertical_position:
+  default: "-1em"
+  description: "modal grip vertical position"
+modal_grip_width:
+  default: "70px"
+  description: "modal grip width"
+modal_grip_height:
+  default: "6px"
+  description: "modal grip height"
+modal_grip_background:
+  default: "var(--primary-low-mid-or-secondary-low)"
+  description: "modal grip background color"
+modal_grip_animation_enabled:
+  type: bool
+  default: true
+  description: "modal grip animation"
+modal_grip_animation_speed:
+  default: "750ms"
+  description: "modal grip animation speed"

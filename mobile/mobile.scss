@@ -1,0 +1,87 @@
+// D-modal
+
+.d-modal {
+  &__container {
+    border-radius: #{$modal_border_radius};
+
+    html.discourse-touch.keyboard-visible & {
+      border-radius: 0;
+    }
+  }
+
+  html.discourse-touch:not(.keyboard-visible) & {
+    &__container {
+      &:before {
+        content: "";
+        position: fixed;
+        transform: translate(-50%, #{$modal_grip_vertical_position});
+        left: 50%;
+        width: #{$modal_grip_width};
+        height: #{$modal_grip_height};
+        background: #{$modal_grip_background};
+        border-radius: 2em;
+        @if $modal-grip-animation-enabled == "true" {
+          animation: modal-grip #{$modal_grip_animation_speed} ease-in-out;
+        }
+      }
+    }
+    &__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .modal-close {
+        display: none;
+      }
+    }
+  }
+
+  // Known Non Dismissable Modals
+  &.discard-draft-modal,
+  &.admin-delete-user-posts-progress-modal {
+    .d-modal__container {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  // New Private Chat Modal
+  &.chat-modal-new-message {
+    align-items: flex-end;
+    .d-modal__container {
+      width: 100%;
+    }
+  }
+
+  // Table Builder Modal
+  &.insert-table-modal {
+    flex-direction: unset;
+    .d-modal__container {
+      max-height: calc(var(--composer-vh, var(--1dvh)) * 85);
+      height: auto;
+    }
+  }
+
+  // Templates Modal
+  &.d-templates-modal {
+    flex-direction: unset;
+  }
+}
+
+// Modal Grip Animation
+
+@keyframes modal-grip {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  75% {
+    opacity: 0.75;
+    width: calc(#{$modal_grip_width} + 10px);
+  }
+  100% {
+    opacity: 1;
+    width: #{$modal_grip_width};
+  }
+}
