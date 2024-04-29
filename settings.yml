@@ -1,6 +1,6 @@
 modal_border_radius: 
-  default: "1em 1em 0 0"
-  description: "top-left top-right bottom-right bottom-left"
+  default: "1em"
+  description: "modal top rounding"
 modal_grip_vertical_position:
   default: "-1em"
   description: "modal grip vertical position"
