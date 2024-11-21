@@ -3,7 +3,11 @@
 .d-modal {
   &__container {
     border-radius: #{$modal_border_radius} #{$modal_border_radius} 0 0;
-
+    
+    .fk-d-menu-modal__grip {
+      display: none;
+    }
+    
     html.discourse-touch.keyboard-visible & {
       border-radius: 0;
     }
@@ -26,6 +30,7 @@
       }
     }
     &__header {
+      padding: 0.5rem;
       .d-modal__title {
         text-align: center;
         margin: auto;
