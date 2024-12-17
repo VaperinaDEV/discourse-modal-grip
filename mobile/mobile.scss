@@ -15,13 +15,15 @@
 
   html.discourse-touch:not(.keyboard-visible) & {
     &__container {
+      --grip-width: #{$modal_grip_width};
+      --grip-height: #{$modal_grip_height};
       &:before {
         content: "";
-        position: fixed;
-        transform: translate(-50%, #{$modal_grip_vertical_position});
-        left: 50%;
-        width: #{$modal_grip_width};
-        height: #{$modal_grip_height};
+        position: absolute;        
+        left: calc(50% - (var(--grip-width) / 2));
+        margin-top: #{$modal_grip_vertical_position};
+        width: var(--grip-width);
+        height: var(--grip-height);
         background: #{$modal_grip_background};
         border-radius: 2em;
         @if $modal-grip-animation-enabled == "true" {
